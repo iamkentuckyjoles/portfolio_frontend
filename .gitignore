@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
+=======
+
+src/videos/demo.webmsrc/videos/demo.webm
+>>>>>>> d9de644 (Update add fetch teh code from backend endpoints and improve the design)
