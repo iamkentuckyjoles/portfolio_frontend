@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
   <div class="p-4 bg-base-200 rounded-lg shadow-md text-left">
+=======
+  <div class="p-4 rounded-lg text-left">
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
     <!-- Name + settings icon -->
     <!-- Name + check + settings -->
     <div class="flex items-center justify-between">
@@ -21,10 +25,20 @@
           viewBox="0 0 24 24" fill="currentColor">
         <path d="M19 9A7 7 0 1 0 5 9c0 1.387.409 2.677 1.105 3.765h-.008L12 22l5.903-9.235h-.007A6.97 6.97 0 0 0 19 9m-7 3a3 3 0 1 1 0-6a3 3 0 0 1 0 6"/>
       </svg>
+<<<<<<< HEAD
       Villaba Leyte, Philippines
     </p>
 
     <p class="mt-2 text-sm font-semibold">Aspiring Full Stack Dev</p>
+=======
+      Philippines
+    </p>
+
+    <p class="mt-2 text-sm font-semibold">
+      A{{ displayedText }}
+    </p>
+
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
 
 
 
@@ -34,12 +48,21 @@
     <div class="mt-2 flex flex-row items-center gap-6 text-xs">
       
       <!-- Send a mail + SVG grouped tightly -->
+<<<<<<< HEAD
       <div class="flex items-center gap-2">
         <span class="text-xs">Send a mail</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
             viewBox="0 0 256 256" class="cursor-pointer" @click="showModal = true">
           <g fill="none">
             <rect width="256" height="256" fill="#f4f2ed" rx="60"/>
+=======
+      <div class="flex items-center">
+        <span class="text-xs"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
+            viewBox="0 0 256 256" class="cursor-pointer" @click="showModal = true">
+          <g fill="none">
+            <rect width="256" height="256" rx="60"/>
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
             <path fill="#4285f4" d="M41.636 203.039h31.818v-77.273L28 91.676v97.727c0 7.545 6.114 13.636 13.636 13.636"/>
             <path fill="#34a853" d="M182.545 203.039h31.819c7.545 0 13.636-6.114 13.636-13.636V91.675l-45.455 34.091"/>
             <path fill="#fbbc04" d="M182.545 66.675v59.091L228 91.676V73.492c0-16.863-19.25-26.477-32.727-16.363"/>
@@ -49,6 +72,7 @@
         </svg>
       </div>
 
+<<<<<<< HEAD
       
 
     
@@ -63,6 +87,23 @@
             <input type="text" v-model="form.name" placeholder="Your Name" class="input input-bordered w-full mb-2" />
             <input type="email" v-model="form.email" placeholder="Your Email" class="input input-bordered w-full mb-2" />
             <textarea v-model="form.message" placeholder="Your Message" class="textarea textarea-bordered w-full mb-2"></textarea>
+=======
+      <!-- Modal -->
+      <div v-if="showModal" 
+          class="fixed inset-0 flex items-center justify-center 
+                  bg-black/40 backdrop-blur-sm z-50 
+                  animate-fadeIn">
+        <div class="bg-white dark:bg-base-200 p-6 rounded shadow-md w-80 
+                    transform animate-slideUp">
+          <h2 class="text-sm font-bold mb-2">Send a Mail</h2>
+          <form @submit.prevent="submitForm">
+            <input type="text" v-model="form.name" placeholder="Name" 
+                  class="input input-sm input-bordered w-full mb-2" />
+            <input type="email" v-model="form.email" placeholder="Email" 
+                  class="input input-sm input-bordered w-full mb-2" />
+            <textarea v-model="form.message" placeholder="Message" 
+                      class="textarea textarea-sm textarea-bordered w-full mb-2"></textarea>
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
             <div class="flex justify-end gap-2">
               <button type="button" class="btn btn-sm" @click="showModal = false">Cancel</button>
               <button type="submit" class="btn btn-sm btn-primary">Send</button>
@@ -70,12 +111,18 @@
           </form>
         </div>
       </div>
+<<<<<<< HEAD
 
     
       <!-- Social icons inline -->
       <div class="flex items-center flex-row gap-2">
         
        
+=======
+    
+      <!-- Social icons inline -->
+      <div class="flex items-center flex-row gap-2">
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
      
 
       <!-- Social icons inline -->
@@ -125,14 +172,45 @@
 </template>
 
 <script setup>
+<<<<<<< HEAD
 import { ref } from 'vue'
+=======
+import { ref, onMounted, onUnmounted } from 'vue'
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
 
 const showModal = ref(false)
 const form = ref({ name: '', email: '', message: '' })
 
 function submitForm() {
+<<<<<<< HEAD
   // handle form submission logic here
   console.log('Form submitted:', form.value)
   showModal.value = false
 }
+=======
+  console.log('Form submitted:', form.value)
+  showModal.value = false
+}
+
+// Typewriter animation for "Aspiring Full Stack Dev"
+const fullText = "spiring Full Stack Developer"
+const displayedText = ref("")
+let index = 0
+let intervalId = null
+
+onMounted(() => {
+  intervalId = setInterval(() => {
+    if (index < fullText.length) {
+      displayedText.value += fullText[index]
+      index++
+    } else {
+      clearInterval(intervalId)
+    }
+  }, 100) // 100ms per letter
+})
+
+onUnmounted(() => {
+  if (intervalId) clearInterval(intervalId)
+})
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
 </script>

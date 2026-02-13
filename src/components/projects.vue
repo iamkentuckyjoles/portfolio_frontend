@@ -1,9 +1,15 @@
 <template>
+<<<<<<< HEAD
   <div class="p-4 bg-base-200 rounded-lg shadow-md">
     <!-- Title + Next Arrow -->
     <div class="flex items-center justify-between mb-2">
       <h2 class="text-xs font-bold">Projects</h2>
       <!-- Next Arrow SVG -->
+=======
+  <div class="p-2 bg-base-300 rounded-lg shadow-md">
+    <div class="flex items-center justify-between mb-2">
+      <h2 class="text-xs font-bold">Projects</h2>
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
            viewBox="0 0 24 24" class="cursor-pointer"
            @click="nextProject">
@@ -11,6 +17,7 @@
       </svg>
     </div>
 
+<<<<<<< HEAD
     <!-- Project box -->
     <div class="space-y-2 text-xs">
       <div class="p-2 bg-base-300 rounded">
@@ -154,18 +161,36 @@
         </div>
       </div>
     </div>
+=======
+    <!-- Render the correct project -->
+    <Project1 v-if="currentProject === 0" />
+    <Project2 v-if="currentProject === 1" />
+    <Project3 v-if="currentProject === 2" />
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+<<<<<<< HEAD
 
 const currentProject = ref(0) // start with Project 1
 const totalProjects = 3       // you have 3 projects
+=======
+import Project1 from './projects/project1.vue'
+import Project2 from './projects/project2.vue'
+import Project3 from './projects/project3.vue'
+
+const currentProject = ref(0)
+const totalProjects = 3
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
 
 function nextProject() {
   currentProject.value = (currentProject.value + 1) % totalProjects
 }
 </script>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
