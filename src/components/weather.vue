@@ -1,10 +1,8 @@
 <template>
-  <div class="p-4 bg-base-200 rounded-lg shadow-md">
-    <h2 class="text-sm font-bold mb-2">Weather</h2>
+  <div class="p-2 bg-base-300 rounded-lg shadow-md">
+    <h2 class="text-xs font-bold mb-2">Weather</h2>
     <div class="text-xs text-gray-500">
-      <p>🌤️ Location: Villaba, Leyte</p>
-      <p>Temperature: 28°C</p>
-      <p>Condition: Partly Cloudy</p>
+      <p>🌤️ Location: </p>
     </div>
   </div>
 </template>

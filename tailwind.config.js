@@ -5,9 +5,6 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-<<<<<<< HEAD
-    extend: {},
-=======
     extend: {
       keyframes: {
         fadeIn: {
@@ -24,7 +21,6 @@ export default {
         slideUp: 'slideUp 0.3s ease-out',
       },
     },
->>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
   },
   plugins: [require('daisyui')],
 }

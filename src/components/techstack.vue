@@ -1,31 +1,5 @@
 <template>
-<<<<<<< HEAD
-  <div class="p-4 bg-base-200 rounded-lg shadow-md">
-    <h2 class="text-xs font-bold mb-2">My Tech Stack</h2>
-
-    <!-- Frontend -->
-    <h3 class="text-xs font-semibold mt-2">Frontend</h3>
-    <div class="grid grid-cols-2 text-center sm:grid-cols-3 gap-2 text-xs">
-      <div class="p-1 bg-base-300 rounded">TailwindCSS</div>
-      <div class="p-1 bg-base-300 rounded">CSS</div>
-      <div class="p-1 bg-base-300 rounded">JavaScript</div>
-      <div class="p-1 bg-base-300 rounded">Vue.js</div>
-    </div>
-
-    <!-- Backend -->
-    <h3 class="text-xs font-semibold mt-2">Backend</h3>
-    <div class="grid grid-cols-2 text-center sm:grid-cols-3 gap-2 text-xs">
-      <div class="p-1 bg-base-300 rounded">Python</div>
-      <div class="p-1 bg-base-300 rounded">Django</div>
-      <div class="p-1 bg-base-300 rounded">DRF</div>
-      <div class="p-1 bg-base-300 rounded">Postgres</div>
-    </div>
-
-    <!-- DevOps & Cloud -->
-    <h3 class="text-xs font-semibold mt-2">DevOps & Cloud</h3>
-    <div class="grid grid-cols-2 text-center sm:grid-cols-3 gap-2 text-xs">
-=======
-  <div class="p-2 bg-base-300 rounded-lg shadow-md">
+  <div class="p-3 bg-base-300 rounded-lg shadow-md">
     <h2 class="text-xs font-bold">Tech Stack</h2>
 
     <!-- Backend -->
@@ -45,7 +19,7 @@
     </div>
 
     <!-- Frontend -->
-    <h3 class="text-xs text-centerfont-medium mt-1">Frontend</h3>
+    <h3 class="text-xs text-center font-medium mt-1"> Frontend</h3>
     <div class="grid grid-cols-2 text-center sm:grid-cols-3 gap-2 text-xs p-1">
       <div class="p-1 bg-blue-500 rounded">TailwindCSS</div>
       <div class="p-1 bg-yellow-500 rounded">JavaScript</div>
@@ -57,14 +31,11 @@
     <!-- DevOps & Cloud -->
     <h3 class="text-xs text-center font-medium mt-1">DevOps & Cloud</h3>
     <div class="grid grid-cols-2 text-center sm:grid-cols-3 gap-2 text-xs p-1">
->>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
       <div class="p-1 bg-base-300 rounded">GitHub Actions</div>
       <div class="p-1 bg-base-300 rounded">DigitalOcean</div>
       <div class="p-1 bg-base-300 rounded">Vercel</div>
       <div class="p-1 bg-base-300 rounded">Docker</div>
     </div>
-<<<<<<< HEAD
-=======
 
     <!-- Tools & Communication -->
     <h3 class="text-xs font-semibold mt-1">Tools & Communication</h3>
@@ -96,7 +67,6 @@
       <div class="p-1 bg-base-300 rounded">Powerbank 4000 mAh</div>
 </div>
 
->>>>>>> 500b6ad (Initial clean commit: portfolio frontend)
   </div>
 </template>
 

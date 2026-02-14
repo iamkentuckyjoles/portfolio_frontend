@@ -1,28 +1,20 @@
-
-
-
 <template>
   <div class="bg-base-300 rounded text-xs">
-    <!-- Carousel -->
+    <!-- Slide container -->
     <div class="w-full rounded overflow-hidden relative">
       <transition name="fade" mode="out-in">
         <div :key="currentSlide" class="w-full">
           <img
-            v-if="slides[currentSlide].type === 'image'"
             :src="slides[currentSlide].src"
             class="w-full"
             :alt="slides[currentSlide].alt"
           />
-          <video v-else controls class="w-full">
-            <source :src="slides[currentSlide].src" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
         </div>
       </transition>
     </div>
 
     <!-- Dot navigation -->
-    <div class="flex w-full justify-center gap-2 py-1">
+    <div class="flex w-full justify-center gap-2 mt-1">
       <span
         v-for="(slide, index) in slides"
         :key="'dot-' + index"
@@ -31,16 +23,16 @@
         @click="goToSlide(index)"
       ></span>
     </div>
-    <!-- Project 1 details -->
-    <h3 class="font-semibold mt-2">XMP Filter Storage</h3>
-    <p class="p-2 ">
+
+   <!-- Project details -->
+    <h3 class="font-semibold mt-1">XMP Filter Storage</h3>
+    <p>
       A secure web app for freelance photo editors to strictly manage and track XMP files.
       Includes role-based dashboards, Editors Log, tutorials per role, ranking system,
       notifications, announcements, profile picture upload, and strict XMP file storage.
     </p>
-
     <!-- Tech Stack -->
-    <p class="mt-2 font-semibold">Tech Stack Used:</p>
+    <p class="mt-1 font-semibold">Tech Stack Used:</p>
     <div class="flex items-center gap-3 mt-1">
       <!-- Django -->
       <div class="flex items-center gap-1 mt-1">
@@ -107,10 +99,32 @@
     </div>
 
     <!-- Links -->
-    <p class="mt-3">
-      🔗 <a href="https://github.com/iamkentuckyjoles/sif" target="_blank" class="text-blue-600 underline">GitHub</a>
-      🌐 <a href="https://sifeditor.website" target="_blank" class="text-blue-600 underline">Live Demo</a>
-    </p>
+    <p class="mt-2 flex items-center gap-4">
+    <!-- GitHub Link -->
+    <a href="https://github.com/iamkentuckyjoles/sif" 
+      target="_blank" 
+      class="flex items-center gap-1 text-blue-600 underline">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <path d="M13.213 9.787a3.39 3.39 0 0 0-4.795 0l-3.425 3.426a3.39 3.39 0 0 0 4.795 4.794l.321-.304m-.321-4.49a3.39 3.39 0 0 0 4.795 0l3.424-3.426a3.39 3.39 0 0 0-4.794-4.795l-1.028.961"/>
+      </svg>
+      GitHub
+    </a>
+
+    <!-- Live Demo Link -->
+    <a href="https://sifeditor.website" 
+      target="_blank" 
+      class="flex items-center gap-1 text-blue-600 underline">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+          stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+        <path d="M12 21a9 9 0 1 0 0-18m0 18a9 9 0 1 1 0-18m0 18c2.761 0 3.941-5.163 3.941-9S14.761 3 12 3m0 18c-2.761 0-3.941-5.163-3.941-9S9.239 3 12 3M3.5 9h17m-17 6h17"/>
+      </svg>
+      Website
+    </a>
+  </p>
+
   </div>
 </template>
 
@@ -118,11 +132,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const slides = [
-  { type: 'image', src: new URL('@/images/dashboard1.png', import.meta.url).href, alt: 'Dashboard sample 1' },
-  { type: 'image', src: new URL('@/images/dashboard2.png', import.meta.url).href, alt: 'Dashboard sample 2' },
-  { type: 'image', src: new URL('@/images/dashboard3.png', import.meta.url).href, alt: 'Dashboard sample 3' },
-  { type: 'image', src: new URL('@/images/dashboard4.png', import.meta.url).href, alt: 'Dashboard sample 4' },
-  
+  { src: new URL('@/images/dashboard1.png', import.meta.url).href, alt: 'Dashboard sample 1' },
+  { src: new URL('@/images/dashboard2.png', import.meta.url).href, alt: 'Dashboard sample 2' },
+  { src: new URL('@/images/dashboard3.png', import.meta.url).href, alt: 'Dashboard sample 3' },
+  { src: new URL('@/images/dashboard4.png', import.meta.url).href, alt: 'Dashboard sample 4' },
 ]
 
 const currentSlide = ref(0)
@@ -137,14 +150,7 @@ function nextSlide() {
 }
 
 onMounted(() => {
-  intervalId = setInterval(() => {
-    const current = slides[currentSlide.value]
-    if (current.type === 'video') {
-      const videoEl = document.querySelector('video')
-      if (videoEl && !videoEl.paused) return
-    }
-    nextSlide()
-  }, 10000)
+  intervalId = setInterval(nextSlide, 5000) // auto next every 5s
 })
 
 onUnmounted(() => {
