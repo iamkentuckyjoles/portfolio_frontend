@@ -1,10 +1,15 @@
 <template>
   <div class="flex justify-center items-center min-h-[120px]">
     <!-- Weather tile -->
-    <div v-if="weather" class="flex flex-col items-center gap-2 text-center">
-      <!-- Emoji (depends on condition) -->
-      <div class="text-2xl">
-        {{ getEmoji(weather.description) }}
+    <div v-if="weather" class="flex flex-col items-center text-center">
+      <!-- Weather Icon -->
+      <div>
+        <img
+          v-if="weather.icon_url"
+          :src="weather.icon_url"
+          alt="Weather icon"
+          class="w-15 h-15"
+        />
       </div>
 
       <!-- Temperature -->
@@ -14,9 +19,8 @@
 
       <!-- Location -->
       <div class="text-xs">
-        Building from {{ weather.location }}
+        Currently building in {{ weather.location }}
       </div>
-
     </div>
 
     <!-- Loading state -->
@@ -40,19 +44,6 @@ onMounted(async () => {
     console.error('Failed to fetch weather:', err)
   }
 })
-
-// Map backend condition/description to emoji
-function getEmoji(description) {
-  if (!description) return '❓'
-  const desc = description.toLowerCase()
-  if (desc.includes('clear')) return '☀️'
-  if (desc.includes('cloud')) return '☁️'
-  if (desc.includes('rain')) return '🌧️'
-  if (desc.includes('drizzle')) return '🌦️'
-  if (desc.includes('thunder')) return '⛈️'
-  if (desc.includes('snow')) return '❄️'
-  return '🌤️'
-}
 </script>
 
 <style scoped>

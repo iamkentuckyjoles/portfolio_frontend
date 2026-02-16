@@ -17,7 +17,7 @@
             </div>
           </div>
           <div>
-            <div class="p-4 bg-base-200 rounded-lg shadow-md w-full">
+            <div class="p-2 bg-base-200 rounded-lg shadow-md w-full">
               <Weather />
             </div>
           </div>

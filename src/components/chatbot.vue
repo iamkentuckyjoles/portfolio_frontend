@@ -22,7 +22,7 @@
 
     <!-- Chat container -->
     <div v-if="showChat" 
-        class="bg-base-200 rounded-lg shadow-md w-80 absolute text-xs border"
+        class="bg-base-200 rounded-md shadow-md w-80 absolute text-xs border"
         :style="{ top: position.top + 40 + 'px', left: (position.left - 310) + 'px' }"
         :class="props.theme === 'light' ? 'border-black' : 'border-white'">
 
