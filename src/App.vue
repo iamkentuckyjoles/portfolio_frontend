@@ -12,12 +12,12 @@
       <div class="md:col-span-2 xl:col-span-2">
         <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-4">
           <div class="md:col-span-3 xl:col-span-3">
-            <div class="p-4 w-full">
+            <div class="p-4 bg-base-200 rounded-lg shadow-md w-full">
               <Quotes />
             </div>
           </div>
           <div>
-            <div class="p-2 bg-base-200 rounded-lg shadow-md w-full">
+            <div class="p-4 bg-base-200 rounded-lg shadow-md w-full">
               <Weather />
             </div>
           </div>
@@ -44,8 +44,8 @@
     <div class="absolute top-4 right-4 flex flex-col gap-2 items-end">
       <!-- Mode toggle -->
       <button 
-        class="btn btn-circle btn-xs flex items-center justify-center transition-colors duration-300"
-        :class="theme === 'light' ? 'bg-black text-white hover:bg-gray-700' : 'bg-white text-black hover:bg-gray-200'"
+        class="btn btn-circle btn-xs flex items-center justify-center transition-colors duration-300 hover:scale-105 transition-transform"
+        :class="theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'"
         @click="toggleTheme"
       >
         <!-- Show moon icon when in light mode (to switch to dark) -->
@@ -67,6 +67,9 @@
       <!-- Chatbot -->
       <Chatbot :theme="theme" />
     </div>
+
+
+
   </div>
 </template>
 

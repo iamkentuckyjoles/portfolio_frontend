@@ -13,7 +13,7 @@
           viewBox="0 0 24 24"
           fill="currentColor"
           :class="props.theme === 'light' ? 'text-black' : 'text-white'">
-        <path transform="scale(-1,1) translate(-24,0)"
+        <path transform="scale(-1,1) translate(-24,0) "
               fill="currentColor" fill-rule="evenodd"
               d="M12 1.25C6.063 1.25 1.25 6.063 1.25 12c0 1.856.471 3.605 1.3 5.13l-.787 4.233a.75.75 0 0 0 .874.874l4.233-.788A10.7 10.7 0 0 0 12 22.75c5.937 0 10.75-4.813 10.75-10.75S17.937 1.25 12 1.25m5 9.5a1.25 1.25 0 1 0 0 2.5a1.25 1.25 0 0 0 0-2.5M10.75 12a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0M7 10.75a1.25 1.25 0 1 0 0 2.5a1.25 1.25 0 0 0 0-2.5" 
               clip-rule="evenodd"/>
@@ -90,30 +90,35 @@
 
       <!-- Footer -->
       <div :class="props.theme === 'light' ? 'bg-gray-200 text-black' : 'bg-black text-white'"
-           class="flex gap-2 px-3 py-2 rounded-b-lg">
-        <input
-          v-model="userInput"
-          type="text"
-          placeholder="Type your message..."
-          class="input input-bordered input-xs w-full font-normal"
-          @keyup.enter="sendMessage"
-        />
-        <button 
-          class="btn btn-xs font-normal transition-colors duration-300"
-          :class="props.theme === 'light' 
-            ? 'bg-white text-black hover:bg-black hover:text-white' 
-            : 'bg-black text-white hover:bg-white hover:text-black'"
-          @click="sendMessage"
-        >
-          Send
-        </button>
+          class="flex flex-col px-3 py-2 rounded-b-lg">
+        <div class="flex gap-2">
+          <input
+            v-model="userInput"
+            type="text"
+            placeholder="Type your message..."
+            class="input input-bordered input-xs w-full font-normal"
+            @keyup.enter="sendMessage"
+          />
+          <button 
+            class="btn btn-xs font-normal transition-colors duration-300 hover:scale-105 transition-transform"
+            :class="props.theme === 'light' 
+              ? 'bg-white text-black hover:bg-black hover:text-white' 
+              : 'bg-black text-white hover:bg-white hover:text-black'"
+            @click="sendMessage"
+          >
+            Send
+          </button>
+        </div>
+
+        <!-- Usage counter -->
+        <small class="p-1 text-[10px] opacity-70 text-left">Usage {{ usage }}</small>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, nextTick } from 'vue'
+import { ref, nextTick, onMounted } from 'vue'
 import light from '@/assets/light.png'
 import lightHover from '@/assets/light_hover.png'
 import dark from '@/assets/dark.png'
@@ -131,10 +136,11 @@ const props = defineProps({
 const showChat = ref(false)
 const loading = ref(false)
 const messages = ref([
-  { sender: 'bot', text: "Hello, I'm Kenth Chatbot. Ask me anything about Kenth and I’ll share what I know, as long as I have the knowledge." }
+  { sender: 'bot', text: "Hello, I'm Kenth, Feel free to ask me anything about myself and I’ll be glad to share more details about me, my projects and experiences." }
 ])
 const userInput = ref("")
 const chatContainer = ref(null)
+const usage = ref("0/100")
 
 const position = ref({ top: -5, left: -24 })
 let dragging = false
@@ -173,6 +179,16 @@ function scrollToBottom() {
   }
 }
 
+async function fetchUsage() {
+  try {
+    const response = await fetch("http://localhost:8001/api/chat/usage/")
+    const data = await response.json()
+    usage.value = data.usage
+  } catch (error) {
+    console.error("Failed to fetch usage", error)
+  }
+}
+
 async function sendMessage() {
   if (!userInput.value.trim()) return
   messages.value.push({ sender: 'user', text: userInput.value })
@@ -189,7 +205,8 @@ async function sendMessage() {
     })
     const data = await response.json()
     messages.value.push({ sender: 'bot', text: data.response })
-    await nextTick()
+    usage.value = data.usage
+        await nextTick()
     scrollToBottom()
   } catch (error) {
     console.error(error)
@@ -201,6 +218,11 @@ async function sendMessage() {
     userInput.value = ""
   }
 }
+
+// Fetch usage when component mounts
+onMounted(() => {
+  fetchUsage()
+})
 </script>
 
 <style>

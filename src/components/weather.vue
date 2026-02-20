@@ -25,7 +25,7 @@
 
     <!-- Loading state -->
     <div v-else class="text-xs text-center">
-      Loading weather...
+      <span class="loading loading-infinity loading-xl"></span>
     </div>
   </div>
 </template>

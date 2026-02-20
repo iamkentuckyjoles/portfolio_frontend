@@ -6,8 +6,7 @@
       <!-- Ongoing Vendor Marketplace -->
       <li>
         <div class="timeline-start timeline-box">
-          Vendor Marketplace (2026)<br/>
-          Ongoing Project
+          Personal Project (2026)<br/>
         </div>
         <div class="timeline-middle">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -68,7 +67,27 @@
       <li>
         <hr class="bg-gray-500" />
         <div class="timeline-end timeline-box">
-          Freelance Photo Editor <br/> SIF (Apr–Oct 2024)
+          Freelance Photo Editor <br/>(Feb–Oct 2024)
+        </div>
+        <div class="timeline-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+              fill="currentColor" class="text-gray-500 h-5 w-5">
+            <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 
+                  0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 
+                  0 10-1.06 1.061l2.5 2.5a.75.75 
+                  0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <hr class="bg-gray-500" />
+      </li>
+
+       <!-- Freelance Photo Editor -->
+      <li>
+        <hr class="bg-gray-500" />
+        <div class="timeline-start timeline-box">
+          Freelance Photo Editor <br/>(Apr–Sept 2024) 
         </div>
         <div class="timeline-middle">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -87,8 +106,8 @@
       <!-- Customer Service -->
       <li>
         <hr class="bg-gray-500" />
-        <div class="timeline-start timeline-box">
-          Customer/Technical Service <br/> (Dec 2023–Mar 2024)  
+        <div class="timeline-end timeline-box">
+          Customer/Technical Service <br/> (Dec 2023–Mar 2024)
         </div>
         <div class="timeline-middle">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -104,51 +123,31 @@
         <hr class="bg-gray-500" />
       </li>
 
-      <!-- Junior Photo Editor -->
+      <!-- Junior Photo Editor --> 
+      <li>
+        <hr class="bg-gray-500" />
+        <div class="timeline-start timeline-box">
+          Freelance Photo Editor <br/>(May–Sep 2023)
+        </div>
+        <div class="timeline-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+              fill="currentColor" class="text-gray-500 h-5 w-5">
+            <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 
+                  0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 
+                  0 10-1.06 1.061l2.5 2.5a.75.75 
+                  0 001.137-.089l4-5.5z"
+                  clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <hr class="bg-gray-500" />
+      </li>
+
+      <!-- Capstone Project -->
       <li>
         <hr class="bg-gray-500" />
         <div class="timeline-end timeline-box">
-          Freelance Photo Editor <br/> SIF (May–Sep 2023)
-        </div>
-        <div class="timeline-middle">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-              fill="currentColor" class="text-gray-500 h-5 w-5">
-            <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 
-                  0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 
-                  0 10-1.06 1.061l2.5 2.5a.75.75 
-                  0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd"/>
-          </svg>
-        </div>
-        <hr class="bg-gray-500" />
-      </li>
-
-          <!-- Capstone Project -->
-      <li>
-        <hr class="bg-gray-500" />
-        <div class="timeline-start timeline-box">
           Capstone Project (2023)<br/>
-        </div>
-        <div class="timeline-middle">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-              fill="currentColor" class="text-gray-500 h-5 w-5">
-            <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 
-                  0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 
-                  0 10-1.06 1.061l2.5 2.5a.75.75 
-                  0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd"/>
-          </svg>
-        </div>
-        <hr class="bg-gray-500" />
-      </li>
-
-      <!-- Hello World -->
-      <li>
-        <hr class="bg-gray-500" />
-        <div class="timeline-end timeline-box">
-          Hello World (2021)<br/>
         </div>
         <div class="timeline-middle">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"

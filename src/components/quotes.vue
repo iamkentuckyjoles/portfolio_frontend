@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6">
+  <div class=" flex p-6 justify-center items-center min-h-[120px]">
     <transition name="fade" mode="out-in">
       <div v-if="currentQuote" :key="currentIndex" class="flex flex-col">
         <!-- Quote centered -->
@@ -11,7 +11,8 @@
           — {{ currentQuote.author }}
         </p>
       </div>
-      <p v-else key="loading" class="text-sm text-gray-500 text-center">Loading...</p>
+      <p v-else key="loading" class="text-sm text-center">
+      <span class="loading loading-infinity loading-xl"></span></p>
     </transition>
   </div>
 </template>

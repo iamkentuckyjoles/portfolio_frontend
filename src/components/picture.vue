@@ -5,13 +5,13 @@
       <img 
         :src="theme === 'light' ? light : dark" 
         alt="Profile picture" 
-        class="w-32 h-35 object-cover transition-opacity duration-300 hover:opacity-0"
+        class="w-32 h-35 object-cover transition-opacity duration-300 hover:opacity-0 hover:scale-105 transition-transform" 
       />
       <!-- Hover image -->
       <img 
         :src="theme === 'light' ? lightHover : darkHover" 
         alt="Profile hover picture" 
-        class="w-32 h-35 object-cover absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity duration-300"
+        class="w-32 h-35 object-cover absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity duration-300 hover:scale-105 transition-transform"
       />
     </div>
   </div>
