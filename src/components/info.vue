@@ -42,7 +42,7 @@
                 hover:scale-105 transition-transform"
           @click="showCsvModal = true"
         >
-          Open CV
+          Resume
         </button>
 
 
@@ -134,22 +134,21 @@
       </div>
 
       <!-- New CV Modal -->
-      <!-- ✅ New CV Modal -->
-      <div v-if="showCsvModal" class="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
-        <div class="relative bg-white dark:bg-base-200 rounded-none shadow-md w-3/5 h-4/5 flex flex-col">
+      <div v-if="showCsvModal" class="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 animate-fadeIn">
+        <div class="relative bg-white dark:bg-base-200 rounded-none shadow-md w-4/5 h-4/5 flex flex-col text-sm">
           
-          <!-- Header (fixed at top inside modal) -->
+          <!-- Header -->
           <header class="border-b border-gray-400 p-6 bg-white dark:bg-base-200 sticky top-0 z-20 flex justify-between items-start rounded-none">
             <div class="text-center flex-1">
               <h3 class="text-2xl font-bold">Kenth Lumantao</h3>
-              <p class="text-xs mt-1">
+              <p class="mt-1">
                 <a href="https://linkedin.com/in/kentuckyjoles" target="_blank" class="text-blue-600 underline">Linkedin</a> | 
                 <a href="https://github.com/iamkentuckyjoles" target="_blank" class="text-blue-600 underline">GitHub</a> | 
                 <span>Email: ikentuckyjoles@gmail.com</span> | 
                 <span>Contact: +63 9693909560</span>
               </p>
             </div>
-            <!-- Close button inside header -->
+            <!-- Close button -->
             <button 
               class="btn btn-sm btn-circle btn-ghost ml-2
                     hover:bg-gray-200 dark:hover:bg-gray-700
@@ -160,139 +159,119 @@
           </header>
 
           <!-- Scrollable CV Content -->
-          <main class="flex-1 overflow-y-auto p-6 space-y-6 text-xs rounded-none">
+          <main class="flex-1 overflow-y-auto p-6 space-y-6 rounded-none">
             <!-- Technical Skills -->
             <div>
-              <div class="text-lg flex justify-between border-b border-gray-400 pb-1 rounded-none">
-                <h4 class="font-semibold">Technical Skills</h4>
+              <div class="flex justify-between border-b border-gray-400 pb-1 rounded-none">
+                <h4 class="text-lg font-semibold">Technical Skills</h4>
               </div>
-               <p class="mt-2">
-                  <span class="font-semibold">Languages: </span>
-                  <span class="text-xs">Python & JavaScript</span>
-              </p>
-              <p class="mt-2">
-                  <span class="font-semibold">Frameworks: </span>
-                  <span class="text-xs">Django, DRF, Vue & Tailwind</span>
-              </p>
-              <p class="mt-2">
-                  <span class="font-semibold">Databases: </span>
-                  <span class="text-xs">Postgres & MySQL</span>
-              </p>
-              <p class="mt-2">
-                  <span class="font-semibold">DevOps: </span>
-                  <span class="text-xs">DigitalOcean, Vercel, GitHub & Docker</span>
-              </p>
-              
+              <p class="mt-1"><span class="font-semibold">Languages: </span>Python & JavaScript</p>
+              <p class="mt-1"><span class="font-semibold">Frameworks: </span>Django, DRF, Vue & Tailwind</p>
+              <p class="mt-1"><span class="font-semibold">Databases: </span>Postgres & MySQL</p>
+              <p class="mt-1"><span class="font-semibold">DevOps: </span>DigitalOcean, Vercel, Git, GitHub & Docker</p>
             </div>
 
             <!-- Soft Skills -->
             <div>
-              <div class="text-lg flex justify-between border-b border-gray-400 pb-1 rounded-none">
-                <h4 class="font-semibold">Soft Skills</h4>
+              <div class="flex justify-between border-b border-gray-400 pb-1 rounded-none">
+                <h4 class="text-lg font-semibold">Soft Skills</h4>
               </div>
-              <p class="mt-2">
-                  <span class="font-semibold">Languages Spoken : </span>
-                  <span class="text-xs"> English, Tagalog & Bisaya</span>
-              </p>
+              <p class="mt-1"><span class="font-semibold">Languages Spoken: </span>English, Tagalog & Bisaya</p>
             </div>
 
             <!-- Experiences & Projects -->
             <div>
-              <div class="text-lg flex justify-between border-b border-gray-400 pb-1 rounded-none">
-                <h4 class="font-semibold">Experiences & Projects</h4>
+              <div class="flex justify-between border-b border-gray-400 pb-1 rounded-none">
+                <h4 class="text-lg font-semibold">Experiences & Projects</h4>
               </div>
 
               <!-- Personal Portfolio -->
-              <div class="flex justify-between mt-2">
+              <div class="flex justify-between mt-1">
                 <p>
                   <span class="font-semibold">Personal Portfolio</span>
-                  <span class="italic text-xs"> | DRF, Vue, Tailwind, Postgres, Vercel, DigitalOcean, Docker</span>
+                  <span class="italic"> | Django REST Framework, Vue.js + TailwindCSS + DaisyUI, PostgreSQL, Vercel, DigitalOcean, Docker</span>
                 </p>
-                <span class="italic text-xs ml-6">Feb 2026</span>
+                <span class="italic ml-6">Feb 2026</span>
               </div>
               <ul class="list-disc list-inside ml-6">
-                <li>Developed responsive portfolio using DRF + Vue</li>
-                <li>Deployed on Vercel with Dockerized workflows</li>
-                <li>Integrated Postgres database for secure storage</li>
+                <li>Designed and developed a full‑stack portfolio platform with separated frontend/backend architecture and a responsive Vue.js interface styled with TailwindCSS/DaisyUI</li>
+                <li>Integrated external APIs including OpenWeatherMap for weather and Google Gemini for chatbot features, with cron jobs managing daily quote updates, expiry, and fallback handling for API limits</li>
+                <li>Secured user interactions with Google reCAPTCHA v3, ensuring safe and reliable contact form submissions</li>
               </ul>
 
               <!-- XMP Filter Storage -->
-              <div class="flex justify-between mt-4">
+              <div class="flex justify-between mt-2">
                 <p>
                   <span class="font-semibold">XMP Filter Storage</span>
-                  <span class="italic text-xs"> | Django, Tailwind, Postgres, DigitalOcean</span>
+                  <span class="italic"> | Django, TailwindCSS + DaisyUI, PostgreSQL, DigitalOcean</span>
                 </p>
-                <span class="italic text-xs ml-6">Oct 2025–Jan 2026</span>
+                <span class="italic ml-6">Oct 2025 – Jan 2026</span>
               </div>
               <ul class="list-disc list-inside ml-6">
-                <li>Built Django backend with Tailwind UI</li>
-                <li>Deployed on DigitalOcean with CI/CD pipelines</li>
-                <li>Implemented authentication and file storage</li>
+                <li>Built a centralized system with role-based access (Admin, Senior, Junior, Clipper) with ranking for top performers</li>
+                <li>Replaced manual spreadsheets with an automated system for tracking hours and activities</li>
+                <li>Centralized XMP filter storage to solve scattered Google Drive issues and speed up event-specific retrieval</li>
               </ul>
 
               <!-- Junior Photo Editor -->
-              <div class="flex justify-between mt-4">
+              <div class="flex justify-between mt-2">
                 <p>
                   <span class="font-semibold">Junior Photo Editor</span>
-                  <span class="italic text-xs"> | Photoshop</span>
+                  <span class="italic"> | Photoshop</span>
                 </p>
-                <span class="italic text-xs ml-6">May–Sep 2023, Apr–Sept 2024 & Feb–Oct 2025</span>
+                <span class="italic ml-6">May–Sep 2023, Apr–Sept 2024 & Feb–Oct 2025</span>
               </div>
               <ul class="list-disc list-inside ml-6">
-                <li>Edited and enhanced product photos</li>
-                <li>Created marketing assets with Photoshop</li>
-                <li>Collaborated with design team under deadlines</li>
+                <li>Edited and added template‑enhanced photos using Photoshop and company website</li>
+                <li>Collaborated with design team under deadlines via Slack</li>
               </ul>
 
               <!-- Customer/Technical Service -->
-              <div class="flex justify-between mt-4">
+              <div class="flex justify-between mt-2">
                 <p class="font-semibold">Customer/Technical Service</p>
-                <span class="italic text-xs ml-6">Dec 2023–Mar 2024</span>
+                <span class="italic ml-6">Dec 2023 – Mar 2024</span>
               </div>
               <ul class="list-disc list-inside ml-6">
-                <li>Resolved customer inquiries and technical issues</li>
-                <li>Maintained service logs and documentation</li>
-                <li>Ensured customer satisfaction consistently</li>
+                <li>Handled customer inquiries and technical issues while maintaining service quality</li>
               </ul>
 
               <!-- Capstone Project -->
-              <div class="flex justify-between mt-4">
+              <div class="flex justify-between mt-2">
                 <p>
-                  <span class="font-semibold">Capstone Project</span>
-                  <span class="italic text-xs"> | Draw.io, Microsoft Access, Word, Google Forms</span>
+                  <span class="font-semibold">Capstone Project/Student Curriculum Residency Information System</span>
+                  <span class="italic"> | Draw.io, Word, Google Forms, JavaScript, CSS, HTML</span>
                 </p>
-                <span class="italic text-xs ml-6">Nov 2022–May 2023</span>
+                <span class="italic ml-6">Nov 2022 – May 2023</span>
               </div>
               <ul class="list-disc list-inside ml-6">
-                <li>Designed system architecture with Draw.io</li>
-                <li>Built database in Microsoft Access</li>
-                <li>Documented processes in Word</li>
-                <li>Collected and analyzed data via Google Forms</li>
+                <li>Develop a web system that efficiently tracks residency and academic progress of BSIT student at Palompon Institute of Technology</li>
+                <li>Designed system architecture with Draw.io and documented processes in Word</li>
+                <li>Collected and analyzed data using Google Forms, and contributed frontend design with JavaScript, CSS, and HTML</li>
               </ul>
-
             </div>
 
             <!-- Education -->
             <div>
-              <div class="text-lg flex justify-between border-b border-gray-400 pb-1 rounded-none">
-                <h4 class="font-semibold">Education</h4>
+              <div class="flex justify-between border-b border-gray-400 pb-1 rounded-none">
+                <h4 class="text-lg font-semibold">Education</h4>
               </div>
-              <div class="flex justify-between mt-2">
-              <p class="font-semibold">Palompon Institute of Technology</p>
+              <div class="flex justify-between mt-1">
+                <p class="font-semibold">Palompon Institute of Technology</p>
               </div>
               <div class="flex justify-between">
                 <p>Bachelor of Science in Information Technology</p>
-                <span class="italic text-xs ml-6">May 2022–2023</span>
+                <span class="italic ml-6">May 2022–2023</span>
               </div>
             </div>
           </main>
 
-          <!-- Footer (fixed at bottom inside modal) -->
-          <footer class="border-t border-gray-400 p-2 text-center text-xs text-gray-500 dark:text-gray-400 rounded-none">
-            <p>© 2026 Kenth Lumantao</p>
+          <!-- Footer -->
+          <footer class="border-t border-gray-400 p-2 text-center text-gray-500 dark:text-gray-400 rounded-none">
+            <p>© 2026 Kenth Lumantao Resume</p>
           </footer>
         </div>
       </div>
+
 
 
 
@@ -472,4 +451,5 @@ function closeCsvModal() {
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
 }
+
 </style>

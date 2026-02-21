@@ -1,2 +1,11 @@
+/* style.css (global) */
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Custom override for reCAPTCHA badge */
+.grecaptcha-badge {
+  transform: scale(0.6);   /* shrink to 80% of original size */
+  transform-origin: bottom right; /* keep it anchored in the corner */
+  
+}
+
