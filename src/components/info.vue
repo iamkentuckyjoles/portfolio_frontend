@@ -171,7 +171,7 @@
               <p class="mt-1"><span class="font-semibold">Languages: </span>Python & JavaScript</p>
               <p class="mt-1"><span class="font-semibold">Frameworks: </span>Django, DRF, Vue & Tailwind</p>
               <p class="mt-1"><span class="font-semibold">Databases: </span>Postgres & MySQL</p>
-              <p class="mt-1"><span class="font-semibold">DevOps: </span>DigitalOcean, Vercel, Git, GitHub & Docker</p>
+              <p class="mt-1"><span class="font-semibold">DevOps: </span>AWS, DigitalOcean, Vercel, Git & Docker</p>
             </div>
 
             <!-- Soft Skills -->
