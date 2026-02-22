@@ -192,7 +192,7 @@
               <div class="flex justify-between mt-1">
                 <p>
                   <span class="font-semibold">Personal Portfolio</span>
-                  <span class="italic"> | Django REST Framework, Vue.js + TailwindCSS + DaisyUI, PostgreSQL, Vercel, DigitalOcean, Docker</span>
+                  <span class="italic"> | Django REST Framework, Vue.js + TailwindCSS + DaisyUI, PostgreSQL, Vercel, AWS, Docker</span>
                 </p>
                 <span class="italic ml-6">Feb 2026</span>
               </div>

@@ -32,6 +32,7 @@
     <h3 class="text-xs text-center font-medium mt-1">DevOps & Cloud</h3>
     <div class="grid grid-cols-2 text-center sm:grid-cols-3 gap-2 text-xs p-1">
       <div class="p-1 bg-gray-700 text-white rounded">GitHub Actions</div>
+      <div class="p-1 text-white rounded bg-gradient-to-r from-black to-yellow-500">AWS</div>
       <div class="p-1 bg-blue-500 text-white rounded">DigitalOcean</div>
       <div class="p-1 bg-black text-white rounded">Vercel</div>
       <div class="p-1 bg-blue-700 text-white rounded">Docker</div>
