@@ -2,7 +2,6 @@
   <div class="flex justify-center items-center min-h-[120px]">
     <!-- Weather tile -->
     <div v-if="weather" class="flex flex-col items-center text-center">
-      <!-- Weather Icon -->
       <div>
         <img
           v-if="weather.icon_url"
@@ -11,13 +10,9 @@
           class="w-15 h-15"
         />
       </div>
-
-      <!-- Temperature -->
       <div class="text-xs font-semibold">
         Today {{ weather.temp ? weather.temp.toFixed(1) + '°C' : '--' }}
       </div>
-
-      <!-- Location -->
       <div class="text-xs">
         Currently building in {{ weather.location }}
       </div>
@@ -34,10 +29,11 @@
 import { ref, onMounted } from 'vue'
 
 const weather = ref(null)
+const API_BASE = import.meta.env.VITE_API_BASE_URL
 
 onMounted(async () => {
   try {
-    const res = await fetch('https://kentuckyjoles.website/api/weather/villaba/')
+    const res = await fetch(`${API_BASE}/weather/villaba/`)
     const data = await res.json()
     weather.value = data
   } catch (err) {
@@ -47,7 +43,6 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-/* Ensure everything is centered */
 div {
   text-align: center;
 }

@@ -126,6 +126,8 @@ import darkHover from '@/assets/dark_hover.png'
 import guestLight from '@/assets/guestlight.png'
 import guestDark from '@/assets/guestdark.png'
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL
+
 const props = defineProps({
   theme: {
     type: String,
@@ -181,7 +183,7 @@ function scrollToBottom() {
 
 async function fetchUsage() {
   try {
-    const response = await fetch("http://localhost:8001/api/chat/usage/")
+    const response = await fetch(`${API_BASE}/chat/usage/`)
     const data = await response.json()
     usage.value = data.usage
   } catch (error) {
@@ -198,7 +200,7 @@ async function sendMessage() {
   loading.value = true
 
   try {
-    const response = await fetch("http://localhost:8001/api/chat/", {
+    const response = await fetch(`${API_BASE}/chat/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: userInput.value })
@@ -206,7 +208,7 @@ async function sendMessage() {
     const data = await response.json()
     messages.value.push({ sender: 'bot', text: data.response })
     usage.value = data.usage
-        await nextTick()
+    await nextTick()
     scrollToBottom()
   } catch (error) {
     console.error(error)

@@ -332,12 +332,16 @@
 import CanvasCursor from './CanvasCursor.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 
+
 /* ---------------- Existing Email Modal ---------------- */
 const showModal = ref(false)
 const form = ref({ name: '', email: '', message: '' })
 const statusMessage = ref("")
 const statusType = ref("") // "success" or "error"
 const isSending = ref(false) // ✅ loading state
+const API_BASE = import.meta.env.VITE_API_BASE_URL
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY
+
 
 // Helper: validate email format
 function isValidEmail(email) {
@@ -391,10 +395,10 @@ async function submitForm() {
 
   try {
     // ✅ Request reCAPTCHA token
-    const token = await grecaptcha.execute("6Lem43EsAAAAAKZnG3OgPHlgHvnlCbldbgi_NciK", {action: "submit"})
+    const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "submit" })
 
     // ✅ Send form + token to backend
-    const res = await fetch("http://localhost:8001/api/send-email/", {
+    const res = await fetch(`${API_BASE}/send-email/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

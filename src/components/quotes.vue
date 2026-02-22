@@ -23,12 +23,14 @@ import { ref, onMounted, onUnmounted } from "vue"
 const quotes = ref([])
 const currentIndex = ref(0)
 const currentQuote = ref(null)
+const API_BASE = import.meta.env.VITE_API_BASE_URL
+
 let intervalId = null
 
 // Fetch quotes from Django API
 const fetchQuotes = async () => {
   try {
-    const res = await fetch("http://localhost:8001/api/quotes/")
+    const res = await fetch(`${API_BASE}/quotes/`)
     let data = await res.json()
 
     // Sort by id ascending (1 → 60)
