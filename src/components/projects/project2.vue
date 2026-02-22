@@ -89,7 +89,7 @@
       <span class="font-semibold">Links:</span>
 
       <!-- GitHub Link -->
-      <a href="https://github.com/iamkentuckyjoles/sif" target="_blank" 
+      <a href="https://github.com/iamkentuckyjoles" target="_blank" 
         class="flex items-center gap-1 text-blue-600">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
             viewBox="0 0 24 24" fill="none" stroke="currentColor" 
@@ -100,7 +100,7 @@
       </a>
 
       <!-- Website Link -->
-      <a href="https://sifeditor.website" target="_blank" 
+      <a href="https://kentuckyjoles.website" target="_blank" 
         class="flex items-center gap-1 text-blue-600">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
             viewBox="0 0 24 24" fill="none" stroke="currentColor" 
