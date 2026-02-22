@@ -68,7 +68,7 @@
       <div class="p-1 text-white bg-gray-500 rounded">
         Lenovo i5 & Ryzen 5
       </div>
-      <div class="p-1 text-white bg-gray-500 rounded">Powerbank 4000 mAh</div>
+      <div class="p-1 text-white bg-gray-500 rounded">Pwerbank 40000 mAh</div>
 </div>
 
   </div>

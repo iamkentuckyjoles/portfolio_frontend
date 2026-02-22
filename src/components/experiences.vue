@@ -67,7 +67,7 @@
       <li>
         <hr class="bg-gray-500" />
         <div class="timeline-end timeline-box">
-          Freelance Photo Editor <br/>(Feb–Oct 2024)
+          Freelance Photo Editor <br/>(Feb–Oct 2025)
         </div>
         <div class="timeline-middle">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
