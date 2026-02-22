@@ -118,24 +118,8 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const slides = [
-  // Login
-  { src: new URL('@/images/login.png', import.meta.url).href, alt: 'Login sample' },
-
-  // Admin series
-
-  { src: new URL('@/images/admin1.png', import.meta.url).href, alt: 'Admin sample 1' },
-
-
-  // Senior series
-  { src: new URL('@/images/senior.png', import.meta.url).href, alt: 'Senior sample' },
-
-
-  // Junior series
-  { src: new URL('@/images/junior.png', import.meta.url).href, alt: 'Junior sample' },
-
-
-  // Clipper series
-  { src: new URL('@/images/clipper.png', import.meta.url).href, alt: 'Clipper sample' },
+  { src: new URL('@/images/quotes.png', import.meta.url).href, alt: 'qoutes' },
+  { src: new URL('@/images/weather.png', import.meta.url).href, alt: 'weather' },
 
 ]
 

@@ -1,5 +1,6 @@
 <template>
   <div class="p-4 text-left">
+  <CanvasCursor />
     <!-- ... your existing content ... -->
     <!-- Name + check + settings -->
     <div class="flex items-center justify-between">
@@ -78,6 +79,7 @@
           </button>
 
           <h2 class="text-sm font-bold">Send a Mail</h2>
+          <CanvasCursor />
 
           <!-- ✅ Floating status notification -->
           <transition name="fade">
@@ -138,6 +140,7 @@
         <div class="relative bg-white dark:bg-base-200 rounded-none shadow-md w-4/5 h-4/5 flex flex-col text-sm">
           
           <!-- Header -->
+          <CanvasCursor />
           <header class="border-b border-gray-400 p-6 bg-white dark:bg-base-200 sticky top-0 z-20 flex justify-between items-start rounded-none">
             <div class="text-center flex-1">
               <h3 class="text-2xl font-bold">Kenth Lumantao</h3>
@@ -326,6 +329,7 @@
 
 
 <script setup>
+import CanvasCursor from './CanvasCursor.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 
 /* ---------------- Existing Email Modal ---------------- */

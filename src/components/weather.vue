@@ -37,7 +37,7 @@ const weather = ref(null)
 
 onMounted(async () => {
   try {
-    const res = await fetch('http://localhost:8001/api/weather/villaba/')
+    const res = await fetch('https://kentuckyjoles.website/api/weather/villaba/')
     const data = await res.json()
     weather.value = data
   } catch (err) {

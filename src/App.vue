@@ -1,7 +1,11 @@
 <template>
   <div>
+    <!-- Cursor trail overlay -->
+    <CanvasCursor />
+
     <!-- Loading overlay -->
     <div v-if="loading" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <CanvasCursor />
       <h1 class="text-black text-2xl font-bold">
         {{ displayedText }}
       </h1>
@@ -57,13 +61,13 @@
           :class="theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'"
           @click="toggleTheme"
         >
-          <!-- Show moon icon when in light mode (to switch to dark) -->
+          <!-- Show moon icon when in light mode -->
           <svg v-if="theme === 'light'" xmlns="http://www.w3.org/2000/svg" 
                width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
             <path d="M13.719 1.8A8.759 8.759 0 1 1 1.8 13.719c3.335 1.867 7.633 1.387 10.469-1.449c2.837-2.837 3.318-7.134 1.45-10.47"/>
           </svg>
 
-          <!-- Show sun icon when in dark mode (to switch to light) -->
+          <!-- Show sun icon when in dark mode -->
           <svg v-else xmlns="http://www.w3.org/2000/svg" 
                width="16" height="16" viewBox="0 0 80 80" fill="currentColor">
             <g>
@@ -90,6 +94,7 @@ import Experiences from './components/experiences.vue'
 import Quotes from './components/quotes.vue'
 import Weather from './components/weather.vue'
 import Chatbot from './components/chatbot.vue'
+import CanvasCursor from './components/CanvasCursor.vue'  // ✅ Cursor trail overlay
 
 // Theme state
 const theme = ref('light')
@@ -109,7 +114,6 @@ onMounted(() => {
       index++
     } else {
       clearInterval(interval)
-      // small delay before hiding overlay
       setTimeout(() => {
         loading.value = false
       }, 500)

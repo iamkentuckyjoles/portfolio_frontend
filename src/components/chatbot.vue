@@ -136,7 +136,7 @@ const props = defineProps({
 const showChat = ref(false)
 const loading = ref(false)
 const messages = ref([
-  { sender: 'bot', text: "Hello, I'm Kenth, Feel free to ask me anything about myself and I’ll be glad to share more details about me, my projects and experiences." }
+  { sender: 'bot', text: "Hello, I'm Kenth, Feel free to ask me anything about myself and I’ll be glad to share more details about it especially my projects and experiences." }
 ])
 const userInput = ref("")
 const chatContainer = ref(null)
