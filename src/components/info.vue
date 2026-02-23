@@ -392,10 +392,6 @@ async function submitForm() {
   isSending.value = true
 
   try {
-
-    console.log("Recaptcha site key:", RECAPTCHA_SITE_KEY)
-    
-    // ✅ Wrap execute in grecaptcha.ready()
     grecaptcha.ready(async () => {
       const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "submit" })
 
@@ -433,6 +429,13 @@ let index = 0
 let intervalId = null
 
 onMounted(() => {
+  // ✅ Dynamically inject reCAPTCHA script with your site key
+  const script = document.createElement("script")
+  script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`
+  script.async = true
+  script.defer = true
+  document.body.appendChild(script)
+
   intervalId = setInterval(() => {
     if (index < fullText.length) {
       displayedText.value += fullText[index]
@@ -463,4 +466,3 @@ function closeCsvModal() {
   opacity: 0;
 }
 </style>
-
