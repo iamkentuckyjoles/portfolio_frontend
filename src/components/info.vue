@@ -392,6 +392,9 @@ async function submitForm() {
   isSending.value = true
 
   try {
+
+    console.log("Recaptcha site key:", RECAPTCHA_SITE_KEY)
+    
     // ✅ Wrap execute in grecaptcha.ready()
     grecaptcha.ready(async () => {
       const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "submit" })
