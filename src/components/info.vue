@@ -211,7 +211,7 @@
                 <span class="italic ml-6">Oct 2025 – Jan 2026</span>
               </div>
               <ul class="list-disc list-inside ml-6">
-                <li>Built a centralized system with role-based access (Admin, Senior, Junior, Clipper) with ranking for top performers</li>
+                <li>Built a centralized system with role-based access (Admin, Senior, Junior, Clipper) and ranking for top performers</li>
                 <li>Replaced manual spreadsheets with an automated system for tracking hours and activities</li>
                 <li>Centralized XMP filter storage to solve scattered Google Drive issues and speed up event-specific retrieval</li>
               </ul>
@@ -332,7 +332,6 @@
 import CanvasCursor from './CanvasCursor.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 
-
 /* ---------------- Existing Email Modal ---------------- */
 const showModal = ref(false)
 const form = ref({ name: '', email: '', message: '' })
@@ -341,7 +340,6 @@ const statusType = ref("") // "success" or "error"
 const isSending = ref(false) // ✅ loading state
 const API_BASE = import.meta.env.VITE_API_BASE_URL
 const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY
-
 
 // Helper: validate email format
 function isValidEmail(email) {
@@ -370,7 +368,7 @@ function closeModal() {
   resetForm()
 }
 
-// ✅ Updated submitForm with reCAPTCHA
+// ✅ Updated submitForm with reCAPTCHA v3
 async function submitForm() {
   const email = form.value.email || ""
 
@@ -394,31 +392,33 @@ async function submitForm() {
   isSending.value = true
 
   try {
-    // ✅ Request reCAPTCHA token
-    const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "submit" })
+    // ✅ Wrap execute in grecaptcha.ready()
+    grecaptcha.ready(async () => {
+      const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "submit" })
 
-    // ✅ Send form + token to backend
-    const res = await fetch(`${API_BASE}/send-email/`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...form.value,
-        recaptcha_token: token
-      }),
+      const res = await fetch(`${API_BASE}/send-email/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form.value,
+          recaptcha_token: token
+        }),
+      })
+
+      const data = await res.json()
+
+      if (data.status === "Message sent") {
+        showStatus("Message sent successfully!", "success")
+        resetForm()
+      } else {
+        showStatus(data.message || "Failed to send message.", "error")
+      }
+
+      isSending.value = false
     })
-
-    const data = await res.json()
-
-    if (data.status === "Message sent") {
-      showStatus("Message sent successfully!", "success")
-      resetForm()
-    } else {
-      showStatus(data.message || "Failed to send message.", "error")
-    }
   } catch (err) {
     console.error("Error sending:", err)
     showStatus("Failed to send message. Please try again.", "error")
-  } finally {
     isSending.value = false
   }
 }
@@ -459,5 +459,5 @@ function closeCsvModal() {
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
 }
-
 </style>
+
