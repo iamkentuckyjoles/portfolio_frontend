@@ -1,7 +1,7 @@
 <template>
   <div class="p-2 bg-base-300 rounded-lg shadow-md">
     <div class="flex items-center justify-between mb-2">
-      <h2 class="text-xs font-bold">Projects</h2>
+      <h2 class="text-xs font-bold">Project</h2>
       <!-- Next Arrow -->
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
            viewBox="0 0 24 24" class="cursor-pointer hover:scale-105 transition-transform"

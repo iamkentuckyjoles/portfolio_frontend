@@ -14,7 +14,7 @@
     <!-- Main portfolio content -->
     <div v-else class="min-h-screen flex flex-col gap-4 p-2 bg-base-100 relative">
       <!-- Row 1: parent grid with 3 columns -->
-      <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-8 items-start">
+      <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-2 items-start">
         <!-- Column 1: Picture + Info -->
         <div class="flex flex-row items-start gap-2">
           <Picture :theme="theme" />
@@ -40,7 +40,7 @@
 
       <!-- Row 2: 3 columns -->
       <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-4">
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col">
           <TechStack />
           <ContactForm />
         </div>
