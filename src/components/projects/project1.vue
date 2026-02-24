@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-base-300 rounded text-xs h-96">
+  <div class="bg-base-300 rounded text-xs">
     <!-- Slide container -->
-    <div class="w-full rounded overflow-hidden relative">
+    <div class="w-full rounded overflow-hidden relative aspect-[16/8]">
       <transition name="fade" mode="out-in">
         <div :key="currentSlide" class="w-full">
           <img
