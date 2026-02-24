@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-base-300 rounded text-xs">
+  <div class="bg-base-300 rounded text-xs h-96">
     <!-- Slide container -->
     <div class="w-full rounded overflow-hidden relative">
       <transition name="fade" mode="out-in">
