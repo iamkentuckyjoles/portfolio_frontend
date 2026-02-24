@@ -27,7 +27,7 @@
    <!-- Project details -->
     <h3 class="font-semibold mt-1">Personal Portfolio (Full‑Stack)</h3>
     <p class="text-justify">
-      A full‑stack portfolio web app with OpenWeatherMap integration of my specific weather, an SMTP email backend with reCAPTCHA, and Gemini API powering a personal chatbot with knowledge base and automated daily quotes managed with 7‑day cleanup.
+      A full‑stack portfolio web app with OpenWeatherMap integration of my weather location, an SMTP email backend with reCAPTCHA, and Gemini API powering a personal chatbot with knowledge base and automated daily quotes managed with 7‑day cleanup.
     </p>
 
     <!-- Tech Stack -->
