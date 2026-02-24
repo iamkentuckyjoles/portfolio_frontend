@@ -120,6 +120,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const slides = [
   { src: new URL('@/images/quotes.png', import.meta.url).href, alt: 'qoutes' },
   { src: new URL('@/images/weather.png', import.meta.url).href, alt: 'weather' },
+  { src: new URL('@/images/csv.png', import.meta.url).href, alt: 'csv' },
 
 ]
 
