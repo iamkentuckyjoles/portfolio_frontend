@@ -26,9 +26,19 @@
 </template>
 
 <script setup>
-/* ✅ Accept weather data from parent instead of fetching */
-const props = defineProps({
-  weather: { type: Object, default: null }
+import { ref, onMounted } from 'vue'
+
+const weather = ref(null)
+const API_BASE = import.meta.env.VITE_API_BASE_URL
+
+onMounted(async () => {
+  try {
+    const res = await fetch(`${API_BASE}/weather/villaba/`)
+    const data = await res.json()
+    weather.value = data
+  } catch (err) {
+    console.error('Failed to fetch weather:', err)
+  }
 })
 </script>
 

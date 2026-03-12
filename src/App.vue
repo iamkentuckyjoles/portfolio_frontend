@@ -4,11 +4,11 @@
     <CanvasCursor />
 
     <!-- Loading overlay -->
-    <div v-if="loading" class="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
-      <CanvasCursor />
-      <h1 class="text-black text-2xl font-bold mb-4">{{ displayedText }}</h1>
-      <!-- Infinity spinner -->
-      <span class="loading loading-infinity loading-xl"></span>
+    <div v-if="loading" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <CanvasCursor />
+      <h1 class="text-black text-2xl font-bold">
+        {{ displayedText }}
+      </h1>
     </div>
 
     <!-- Main portfolio content -->
@@ -26,14 +26,12 @@
           <div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-4 gap-4">
             <div class="md:col-span-3 xl:col-span-3">
               <div class="p-4 bg-base-200 rounded-lg shadow-md w-full">
-                <!-- ✅ Pass quote as prop -->
-                <Quotes :quotes="quotes" />
+                <Quotes />
               </div>
             </div>
             <div>
               <div class="p-4 bg-base-200 rounded-lg shadow-md w-full">
-                <!-- ✅ Pass weather as prop -->
-                <Weather :weather="weather" />
+                <Weather />
               </div>
             </div>
           </div>
@@ -42,9 +40,16 @@
 
       <!-- Row 2: 3 columns -->
       <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-4">
-        <div class="flex flex-col"><TechStack /></div>
-        <div><Projects /></div>
-        <div class="flex flex-col gap-4"><Experiences /></div>
+        <div class="flex flex-col">
+          <TechStack />
+        </div>
+        <div>
+          <Projects />
+        </div>
+        <div class="flex flex-col gap-4">
+          <Experiences />
+          <!-- Chatbot removed from here -->
+        </div>
       </div>
 
       <!-- Mode toggle + Chatbot together -->
@@ -88,7 +93,7 @@ import Experiences from './components/experiences.vue'
 import Quotes from './components/quotes.vue'
 import Weather from './components/weather.vue'
 import Chatbot from './components/chatbot.vue'
-import CanvasCursor from './components/CanvasCursor.vue'
+import CanvasCursor from './components/CanvasCursor.vue'  // ✅ Cursor trail overlay
 
 // Theme state
 const theme = ref('light')
@@ -99,46 +104,20 @@ const displayedText = ref("")
 const fullText = "Welcome to Kenth's Portfolio"
 let index = 0
 
-// ✅ Weather + Quotes data
-const weather = ref(null)
-const quotes = ref([])
-const currentQuote = ref(null)
-const API_BASE = import.meta.env.VITE_API_BASE_URL
-
-onMounted(async () => {
+onMounted(() => {
   document.documentElement.setAttribute('data-theme', theme.value)
 
-  // Typing animation
   const interval = setInterval(() => {
     if (index < fullText.length) {
       displayedText.value += fullText[index]
       index++
     } else {
       clearInterval(interval)
+      setTimeout(() => {
+        loading.value = false
+      }, 500)
     }
-  }, 100)
-
-  // ✅ Force loading overlay to stay for 10 seconds
-  setTimeout(() => {
-    loading.value = false
-  }, 10000) // 10,000 ms = 10 seconds
-
-  // ✅ Fetch weather + quotes together
-  try {
-    const [weatherRes, quotesRes] = await Promise.all([
-      fetch(`${API_BASE}/weather/villaba/`),
-      fetch(`${API_BASE}/quotes/`)
-    ])
-
-    const weatherData = await weatherRes.json()
-    const quotesData = await quotesRes.json()
-
-    weather.value = weatherData
-    quotes.value = quotesData.sort((a, b) => a.id - b.id)
-    currentQuote.value = quotes.value[0]
-  } catch (err) {
-    console.error("Failed to fetch:", err)
-  }
+  }, 100) // typing speed
 })
 
 function toggleTheme() {
@@ -148,6 +127,7 @@ function toggleTheme() {
 </script>
 
 <style>
+/* Optional fade-in effect for text */
 h1 {
   transition: opacity 0.3s ease-in-out;
 }
