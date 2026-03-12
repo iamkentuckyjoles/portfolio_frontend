@@ -77,7 +77,7 @@
           <!-- Message bubble -->
           <div 
             class="chat-bubble text-xs font-normal"
-            :class="msg.sender === 'user' ? 'text-right text-justify' : 'text-right text-justify'"
+            :class="msg.sender === 'user' ? 'text-justify' : 'text-justify'"
           >
             {{ msg.text }}
           </div>
