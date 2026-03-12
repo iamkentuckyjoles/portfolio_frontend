@@ -59,7 +59,7 @@
       <div ref="chatContainer" 
            class="p-4 space-y-3 max-h-64 overflow-y-auto scrollbar-hide">
         <div v-for="(msg, index) in messages" :key="index" 
-             :class="msg.sender === 'user' ? 'chat chat-end' : 'chat chat-end'">
+             :class="msg.sender === 'user' ? 'chat chat-end' : 'chat chat-start'">
           
           <!-- Avatar + Name -->
           <div class="chat-image avatar flex items-center gap-2">
@@ -77,7 +77,7 @@
           <!-- Message bubble -->
           <div 
             class="chat-bubble text-xs font-normal"
-            :class="msg.sender === 'user' ? 'text-right text-justify' : 'text-left text-justify'"
+            :class="msg.sender === 'user' ? 'text-right text-justify' : 'text-right text-justify'"
           >
             {{ msg.text }}
           </div>
