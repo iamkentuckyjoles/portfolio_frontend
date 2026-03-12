@@ -59,7 +59,7 @@
       <div ref="chatContainer" 
            class="p-4 space-y-3 max-h-64 overflow-y-auto scrollbar-hide">
         <div v-for="(msg, index) in messages" :key="index" 
-             :class="msg.sender === 'user' ? 'chat chat-end' : 'chat chat-start'">
+             :class="msg.sender === 'user' ? 'chat chat-end' : 'chat chat-end'">
           
           <!-- Avatar + Name -->
           <div class="chat-image avatar flex items-center gap-2">

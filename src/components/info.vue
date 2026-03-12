@@ -108,6 +108,9 @@
                       class="textarea textarea-sm textarea-bordered w-full mb-4
                             hover:border-blue-400 dark:hover:border-blue-300"
                       :disabled="isSending"></textarea>
+
+            <div id="recaptcha-badge" class="mt-2"></div>
+
             <div class="flex justify-end gap-2">
               <button type="button" 
                       class="btn btn-sm 
