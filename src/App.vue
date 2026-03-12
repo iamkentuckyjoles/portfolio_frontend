@@ -4,9 +4,11 @@
     <CanvasCursor />
 
     <!-- Loading overlay -->
-    <div v-if="loading" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+    <div v-if="loading" class="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
       <CanvasCursor />
-      <h1 class="text-black text-2xl font-bold">{{ displayedText }}</h1>
+      <h1 class="text-black text-2xl font-bold mb-4">{{ displayedText }}</h1>
+      <!-- Infinity spinner -->
+      <span class="loading loading-infinity loading-xl"></span>
     </div>
 
     <!-- Main portfolio content -->
@@ -25,7 +27,7 @@
             <div class="md:col-span-3 xl:col-span-3">
               <div class="p-4 bg-base-200 rounded-lg shadow-md w-full">
                 <!-- ✅ Pass quote as prop -->
-                <Quotes :quote="currentQuote" />
+                <Quotes :quotes="quotes" />
               </div>
             </div>
             <div>
@@ -113,11 +115,13 @@ onMounted(async () => {
       index++
     } else {
       clearInterval(interval)
-      setTimeout(() => {
-        loading.value = false
-      }, 500)
     }
   }, 100)
+
+  // ✅ Force loading overlay to stay for 10 seconds
+  setTimeout(() => {
+    loading.value = false
+  }, 10000) // 10,000 ms = 10 seconds
 
   // ✅ Fetch weather + quotes together
   try {
